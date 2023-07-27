@@ -1,11 +1,25 @@
 import Products from "@/components/UI/Products";
 
-const HomePage = async() => {
+/* export const getData = async()=>{
   const res = await fetch('http://localhost:5000/watches', {
     cache: 'force-cache'
   })
   const data = await res.json()
-  
+  console.log(data)
+  return data
+  } */
+
+const HomePage = async() => {
+  const res = await fetch('http://localhost:5000/watches', {
+    cache: 'force-cache',
+    next: {
+      revalidate: 5
+    }
+  })
+  const data = await res.json()
+   
+  //const data = await getData()
+  console.log('data',data)
 
   return (
     <div>
