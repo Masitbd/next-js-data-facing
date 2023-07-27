@@ -10,7 +10,7 @@ import Products from "@/components/UI/Products";
   } */
 
 const HomePage = async() => {
-  const res = await fetch('http://localhost:5000/watches', {
+  const res = await fetch('https://next-js-data-facing-mjp2-807c9bv9r-masitbd.vercel.app/watches', {
     cache: 'force-cache',
     next: {
       revalidate: 5
@@ -19,7 +19,7 @@ const HomePage = async() => {
   const data = await res.json()
    
   //const data = await getData()
-  console.log('data',data)
+  //console.log('data',data)
 
   return (
     <div>
